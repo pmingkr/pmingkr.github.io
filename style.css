@@ -1,0 +1,16 @@
+img {
+  cursor: pointer;
+  transition: all 0.3s;
+  transform: scale(1);
+  filter: brightness(70%);
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px;
+}
+img:hover {
+  transform: scale(1.05);
+  filter: brightness(100%);
+}
+body {
+  background-color: #444;
+}

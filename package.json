@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "webme": "^1.0.13"
+  }
+}
