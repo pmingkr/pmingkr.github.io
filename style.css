@@ -1,74 +1,55 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    margin-bottom: 10px;
+    color: #333;
+    margin-bottom: 30px;
 }
 
-p {
-    margin-bottom: 20px;
-}
-
-.input-container {
+.game-list {
     display: flex;
-    margin-bottom: 20px;
+    gap: 20px;
+    justify-content: center;
 }
 
-#input {
-    width: 120px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-    text-align: center;
+.game-card {
+    display: block;
+    width: 200px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#check-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-#check-button:hover {
-    background-color: #45a049;
+.game-card h2 {
+    margin-top: 0;
+    color: #007bff;
 }
 
-#check-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-#logs {
-    width: 250px;
-    font-size: 16px;
-}
-
-.log-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
-    border-bottom: 1px solid #eee;
-}
-
-.log-item .guess {
-    font-weight: bold;
-}
-
-.log-item .result {
-    color: #555;
-}
-
-.correct {
-    color: green;
-    font-weight: bold;
+.game-card p {
+    font-size: 14px;
+    color: #6c757d;
 }

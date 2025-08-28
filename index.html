@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>숫자야구</title>
+    <title>미니 게임 천국</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>숫자야구</h1>
-    <p>3자리 숫자를 맞춰보세요. (서로 다른 숫자)</p>
-    <div class="input-container">
-        <input type="text" id="input" maxlength="3" placeholder="세자리 숫자">
-        <button id="check-button">확인</button>
+    <div class="container">
+        <h1>미니 게임 천국</h1>
+        <nav class="game-list">
+            <a href="number-baseball.html" class="game-card">
+                <h2>숫자야구</h2>
+                <p>컴퓨터가 생각하는 세 자리 숫자를 맞춰보세요!</p>
+            </a>
+            <a href="snake.html" class="game-card">
+                <h2>스네이크 게임</h2>
+                <p>먹이를 먹고 꼬리가 길어지는 뱀을 조종해보세요!</p>
+            </a>
+        </nav>
     </div>
-    <div id="logs"></div>
-    <script src="script.js"></script>
 </body>
 </html>
