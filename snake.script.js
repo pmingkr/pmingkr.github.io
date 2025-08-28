@@ -2,6 +2,12 @@ const canvas = document.getElementById('game-canvas');
 const ctx = canvas.getContext('2d');
 const scoreElement = document.getElementById('score');
 
+// Touch control buttons
+const upBtn = document.getElementById('up-btn');
+const downBtn = document.getElementById('down-btn');
+const leftBtn = document.getElementById('left-btn');
+const rightBtn = document.getElementById('right-btn');
+
 const GRID_SIZE = 20;
 const CANVAS_WIDTH = canvas.width;
 const CANVAS_HEIGHT = canvas.height;
@@ -100,40 +106,61 @@ function generateFood() {
     });
 }
 
-function changeDirection(event) {
-    const LEFT_KEY = 37;
-    const RIGHT_KEY = 39;
-    const UP_KEY = 38;
-    const DOWN_KEY = 40;
-
+function changeDirection(direction) {
     if (changingDirection) return;
     changingDirection = true;
 
-    const keyPressed = event.keyCode;
     const goingUp = dy === -GRID_SIZE;
     const goingDown = dy === GRID_SIZE;
     const goingRight = dx === GRID_SIZE;
     const goingLeft = dx === -GRID_SIZE;
 
-    if (keyPressed === LEFT_KEY && !goingRight) {
+    if (direction === 'LEFT' && !goingRight) {
         dx = -GRID_SIZE;
         dy = 0;
     }
-    if (keyPressed === UP_KEY && !goingDown) {
+    if (direction === 'UP' && !goingDown) {
         dx = 0;
         dy = -GRID_SIZE;
     }
-    if (keyPressed === RIGHT_KEY && !goingLeft) {
+    if (direction === 'RIGHT' && !goingLeft) {
         dx = GRID_SIZE;
         dy = 0;
     }
-    if (keyPressed === DOWN_KEY && !goingUp) {
+    if (direction === 'DOWN' && !goingUp) {
         dx = 0;
         dy = GRID_SIZE;
     }
 }
 
-document.addEventListener('keydown', changeDirection);
+function handleKeyPress(event) {
+    const LEFT_KEY = 37;
+    const RIGHT_KEY = 39;
+    const UP_KEY = 38;
+    const DOWN_KEY = 40;
+
+    const keyPressed = event.keyCode;
+
+    if (keyPressed === LEFT_KEY) {
+        changeDirection('LEFT');
+    }
+    if (keyPressed === UP_KEY) {
+        changeDirection('UP');
+    }
+    if (keyPressed === RIGHT_KEY) {
+        changeDirection('RIGHT');
+    }
+    if (keyPressed === DOWN_KEY) {
+        changeDirection('DOWN');
+    }
+}
+
+// Event Listeners
+document.addEventListener('keydown', handleKeyPress);
+upBtn.addEventListener('click', () => changeDirection('UP'));
+downBtn.addEventListener('click', () => changeDirection('DOWN'));
+leftBtn.addEventListener('click', () => changeDirection('LEFT'));
+rightBtn.addEventListener('click', () => changeDirection('RIGHT'));
 
 generateFood();
 main();

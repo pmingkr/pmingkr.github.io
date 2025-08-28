@@ -41,3 +41,35 @@ h1 {
 .controls a:hover {
     text-decoration: underline;
 }
+
+.touch-controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.touch-controls .row {
+    display: flex;
+    justify-content: center;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    font-size: 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none; /* Prevents text selection on repeated taps */
+}
+
+.control-btn:active {
+    background-color: #0056b3;
+}
